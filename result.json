@@ -1,0 +1,95 @@
+[
+  {
+    "Algorithm": "Bubble Sort",
+    "Swaps": 627547806,
+    "ElapsedTime": "00:00:07.9642485"
+  }
+][
+  {
+    "Algorithm": "Bubble Sort",
+    "Swaps": 627547806,
+    "ElapsedTime": "00:00:07.9354930"
+  }
+][
+  {
+    "Algorithm": "Selection Sort",
+    "Swaps": 49984,
+    "ElapsedTime": "00:00:02.6986606"
+  }
+][
+  {
+    "Algorithm": "Bubble Sort",
+    "Swaps": 627547806,
+    "ElapsedTime": "00:00:07.9208811"
+  }
+][
+  {
+    "Algorithm": "Selection Sort",
+    "Swaps": 49984,
+    "ElapsedTime": "00:00:02.7011644"
+  }
+][
+  {
+    "Algorithm": "Bubble Sort",
+    "Swaps": 627547806,
+    "ElapsedTime": "00:00:08.0006334"
+  }
+][
+  {
+    "Algorithm": "Selection Sort",
+    "Swaps": 49984,
+    "ElapsedTime": "00:00:02.7102711"
+  }
+][
+  {
+    "Algorithm": "Bubble Sort",
+    "Swaps": 627547806,
+    "ElapsedTime": "00:00:08.0023985"
+  }
+][
+  {
+    "Algorithm": "Selection Sort",
+    "Swaps": 49984,
+    "ElapsedTime": "00:00:02.7112060"
+  }
+][
+  {
+    "Algorithm": "Bubble Sort",
+    "Swaps": 627547806,
+    "ElapsedTime": "00:00:07.5457026",
+    "RandomCount": 50000
+  }
+][
+  {
+    "Algorithm": "Bubble Sort",
+    "Swaps": 627547806,
+    "ElapsedTime": "00:00:07.5457026",
+    "RandomCount": 50000
+  },
+  {
+    "Algorithm": "Selection Sort",
+    "Swaps": 49984,
+    "ElapsedTime": "00:00:02.7053885",
+    "RandomCount": 50000
+  }
+][
+  {
+    "Algorithm": "Bubble Sort",
+    "Swaps": 627547806,
+    "ElapsedTime": "00:00:07.5158534",
+    "RandomCount": 50000
+  }
+][
+  {
+    "Algorithm": "Bubble Sort",
+    "Swaps": 627547806,
+    "ElapsedTime": "00:00:07.5158534",
+    "RandomCount": 50000
+  },
+  {
+    "Algorithm": "Selection Sort",
+    "Swaps": 49984,
+    "ElapsedTime": "00:00:02.7071564",
+    "RandomCount": 50000
+  }
+]

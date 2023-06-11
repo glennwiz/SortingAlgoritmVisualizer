@@ -68,8 +68,6 @@ namespace SortingAlgoritmVisualizer
                         message = $"Not swapping | {array[j]} and {array[j + 1]}";
                         messageStyle = Style.Parse("green");
                     }
-
-                    Program.UpdateConsole(ctx, messageStyle, message, array, table);
                 }
 
                 if (!swapped)
