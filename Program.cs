@@ -4,49 +4,53 @@ class Program
 {
     static void Main(string[] args)
     {
-        int[] array = { 5, 2, 8, 4, 1 };
+        int[] array = { 100, 5, 2, 8, 4, 55, 37, 4, 3, 2, 7, 32, 72 };
+        int iterations = 0;
+        //RenderOriginalArray(array);
 
-        // Display the original array
-        var table = new Table().RoundedBorder();
-
-        foreach (int num in array)
+        AnsiConsole.Status()
+        .Start("Starting...", ctx =>
         {
-            table.AddColumn(num.ToString());
-        }
-
-        AnsiConsole.WriteLine("Original Array");
-        AnsiConsole.Write(table);
-
-        AnsiConsole.WriteLine();
-
-        // Sort the array using Bubble Sort and visualize the process
-        BubbleSort(array);
-
-        // Display the sorted array
-        AnsiConsole.WriteLine("\nSorted Array");
-        AnsiConsole.WriteLine(string.Join("  ", array));
+            // Sort the array using Bubble Sort and visualize the process
+            iterations = BubbleSort(array, ctx);
+        });
+        Console.WriteLine($"Bubble sort did {iterations} swaps !!!");
+        Console.WriteLine("Done !!!");
     }
 
-    public static void BubbleSort(int[] array)
+    public static int BubbleSort(int[] array, StatusContext ctx)
     {
-        int n = array.Length;
+        int swaps = 0;
+        var arrayLength = array.Length;
         bool swapped;
 
-        for (int i = 0; i < n - 1; i++)
+        ctx.Status("Starting!");
+        ctx.Spinner(Spinner.Known.Arrow);
+        ctx.SpinnerStyle(Style.Parse("yellow"));
+
+        for (var i = 0; i < arrayLength - 1; i++)
         {
+            var table = new Table().RoundedBorder();
+            Console.Clear();
             swapped = false;
-            for (int j = 0; j < n - i - 1; j++)
+            for (int j = 0; j < arrayLength - i - 1; j++)
             {
-                Console.WriteLine($"Comparing {array[j]} and {array[j + 1]}");
+                var message = $"Comparing    | {array[j]} and {array[j + 1]}";
+                UpdateConsole(ctx, Style.Parse("yellow"), message, array, table);
                 if (array[j] > array[j + 1])
                 {
-                    Console.WriteLine($"Swapping {array[j]} and {array[j + 1]}");
-                    // Swap array[j] and array[j+1]
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+                    message = $"Swapping     | {array[j]} and {array[j + 1]}";
+                    UpdateConsole(ctx, Style.Parse("red"), message, array, table);
 
+                    // Swap array[j] and array[j+1]
+                    (array[j + 1], array[j]) = (array[j], array[j + 1]);
                     swapped = true;
+                    swaps++;
+                }
+                else
+                {
+                    message = $"Not swapping | {array[j]} and {array[j + 1]}";
+                    UpdateConsole(ctx, Style.Parse("green"), message, array, table);
                 }
             }
 
@@ -54,18 +58,31 @@ class Program
             if (!swapped)
                 break;
 
-            var table = new Table().RoundedBorder();
-
-            foreach (int num in array)
-            {
-                table.AddColumn(num.ToString());
-            }
-
-            AnsiConsole.Write(table);
-
-            Thread.Sleep(500);
+            UpdateTableAndPrint(array, table);
         }
+        return swaps;
     }
 
+    private static void UpdateConsole(StatusContext ctx, Style? style, string message, int[] array, Table table)
+    {
+        UpdateTableAndPrint(array, table);
+        ctx.SpinnerStyle(style);
+        ctx.Status(message);
+        Thread.Sleep(50);
+    }
 
+    private static void UpdateTableAndPrint(int[] array, Table table)
+    {
+        Console.Clear();
+        // Clear existing columns from the table
+        table = new Table();
+
+        // Add back columns for the updated array
+        foreach (int num in array)
+        {
+            table.AddColumn(num.ToString());
+        }
+
+        AnsiConsole.Write(table);
+    }
 }
