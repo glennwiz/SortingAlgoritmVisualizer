@@ -17,7 +17,8 @@ class Program
 
         foreach (var sortingAlgorithmType in sortingAlgorithmTypes)
         {
-            int[] array = { 100, 91, 12, 22, 11, 90, 1, 77, 32, 18, 46, 85, 37 };
+            var sortableItems = GetDefaultSortableItems();
+
             int swaps = 0;
 
             if (Activator.CreateInstance(sortingAlgorithmType) is not ISortAlgorithm sortingAlgorithm) { throw new SqlNullValueException(); }
@@ -25,14 +26,14 @@ class Program
             AnsiConsole.Status().Start("Starting...", ctx =>
             {
                 Console.WriteLine($"Running {sortingAlgorithm.Name}");
-                swaps = sortingAlgorithm.SortWithVisualizer(array, ctx);
+                swaps = sortingAlgorithm.SortWithVisualizer(sortableItems, ctx);
             });
 
             Console.WriteLine($"{sortingAlgorithm.Name} did {swaps} swaps !!!");
             int count = 20000;
             Console.WriteLine($"Running without visualization {count} large random array...");
 
-            array = new int[count];
+            var array = new int[count];
             var threeSixNine = new Random(369);
             var stopwatch = Stopwatch.StartNew();
             for (int i = 0; i < array.Length - 1; i++)
@@ -70,7 +71,28 @@ class Program
         }
     }
 
-    public static void UpdateConsole(StatusContext spectreContext, Style? style, string message, int[] array, Table table)
+    private static SortableItem[] GetDefaultSortableItems()
+    {
+        SortableItem[] sortableArray = {
+                new SortableItem(0, 100),
+                new SortableItem(1, 91),
+                new SortableItem(2, 12),
+                new SortableItem(3, 22),
+                new SortableItem(4, 11),
+                new SortableItem(5, 90),
+                new SortableItem(6, 1),
+                new SortableItem(7, 77),
+                new SortableItem(8, 32),
+                new SortableItem(9, 18),
+                new SortableItem(10, 46),
+                new SortableItem(11, 85),
+                new SortableItem(12, 37)
+            };
+
+        return sortableArray;
+    }
+
+    public static void UpdateConsole(StatusContext spectreContext, Style? style, string message, SortableItem[] array, Table table)
     {
 
         UpdateTableAndPrint(array, table);
@@ -79,17 +101,22 @@ class Program
         Thread.Sleep(100);
     }
 
-    public static void UpdateTableAndPrint(int[] array, Table table)
+    public static void UpdateTableAndPrint(SortableItem[] array, Table table)
     {
         Console.Clear();
         // Clear existing columns from the table
         table = new Table();
 
-        // Add back columns for the updated array
-        foreach (int num in array)
+        foreach (SortableItem item in array)
         {
-            table.AddColumn(num.ToString());
+            table.AddColumn(item.Value.ToString());
+
         }
+        // Add back columns for the updated array
+        //foreach (int num in array)
+        //{
+        //    table.AddColumn(num.ToString());
+        //}
 
         AnsiConsole.Write(table);
     }

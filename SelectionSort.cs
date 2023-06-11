@@ -5,7 +5,6 @@ namespace SortingAlgoritmVisualizer
     internal class SelectionSort : ISortAlgorithm
     {
         public string Name => "Selection Sort";
-
         public int SortWithoutVisualizer(int[] array)
         {
             int swaps = 0;
@@ -33,7 +32,7 @@ namespace SortingAlgoritmVisualizer
             return swaps;
         }
 
-        public int SortWithVisualizer(int[] array, StatusContext ctx)
+        public int SortWithVisualizer(SortableItem[] array, StatusContext ctx)
         {
             int swaps = 0;
             int arrayLength = array.Length;
@@ -54,7 +53,7 @@ namespace SortingAlgoritmVisualizer
                     string message;
                     Style messageStyle;
 
-                    if (array[j] < array[minIndex])
+                    if (array[j].Value < array[minIndex].Value)
                     {
                         minIndex = j;
                     }

@@ -33,7 +33,7 @@ namespace SortingAlgoritmVisualizer
             return swaps;
         }
 
-        public int SortWithVisualizer(int[] array, StatusContext ctx)
+        public int SortWithVisualizer(SortableItem[] array, StatusContext ctx)
         {
             int swaps = 0;
             int arrayLength = array.Length;
@@ -54,7 +54,7 @@ namespace SortingAlgoritmVisualizer
                     string message;
                     Style messageStyle;
 
-                    if (array[j] > array[j + 1])
+                    if (array[j].Value > array[j + 1].Value)
                     {
                         (array[j + 1], array[j]) = (array[j], array[j + 1]);
                         swapped = true;
@@ -68,6 +68,8 @@ namespace SortingAlgoritmVisualizer
                         message = $"Not swapping | {array[j]} and {array[j + 1]}";
                         messageStyle = Style.Parse("green");
                     }
+
+                    Program.UpdateConsole(ctx, messageStyle, message, array, table);
                 }
 
                 if (!swapped)
