@@ -1,7 +1,7 @@
 # SortingAlgoritmVisualizer
 
 
-### Bubble Sort - done
+#### Bubble Sort - done
 
 **Algorithm:**
 
@@ -20,7 +20,8 @@
 - O(1) (in-place sorting)
 
 
-### Selection Sort - done
+
+#### Selection Sort - done
 
 **Algorithm:**
 
