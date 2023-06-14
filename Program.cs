@@ -73,20 +73,22 @@ class Program
 
     private static SortableItem[] GetDefaultSortableItems()
     {
+        Style style = Style.Parse("yellow");
+
         SortableItem[] sortableArray = {
-                new SortableItem(0, 100),
-                new SortableItem(1, 91),
-                new SortableItem(2, 12),
-                new SortableItem(3, 22),
-                new SortableItem(4, 11),
-                new SortableItem(5, 90),
-                new SortableItem(6, 1),
-                new SortableItem(7, 77),
-                new SortableItem(8, 32),
-                new SortableItem(9, 18),
-                new SortableItem(10, 46),
-                new SortableItem(11, 85),
-                new SortableItem(12, 37)
+                new SortableItem(0, 100, style),
+                new SortableItem(1, 91,style),
+                new SortableItem(2, 12, style),
+                new SortableItem(3, 22, style),
+                new SortableItem(4, 11, style),
+                new SortableItem(5, 90, style),
+                new SortableItem(6, 1, style),
+                new SortableItem(7, 77, style),
+                new SortableItem(8, 32, style),
+                new SortableItem(9, 18, style),
+                new SortableItem(10, 46, style),
+                new SortableItem(11, 85, style),
+                new SortableItem(12, 37, style)
             };
 
         return sortableArray;
@@ -109,14 +111,8 @@ class Program
 
         foreach (SortableItem item in array)
         {
-            table.AddColumn(item.Value.ToString());
-
+            table.AddColumn($"[{item.Style.Foreground}]{item.Value}[/]");
         }
-        // Add back columns for the updated array
-        //foreach (int num in array)
-        //{
-        //    table.AddColumn(num.ToString());
-        //}
 
         AnsiConsole.Write(table);
     }

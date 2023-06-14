@@ -4,9 +4,21 @@ namespace SortingAlgoritmVisualizer
 {
     internal class SelectionSort : ISortAlgorithm
     {
+        /*
+            Selection Sort is another comparison-based sorting algorithm. 
+            It divides the input list into two portions: the sorted portion and the unsorted portion. 
+            The algorithm repeatedly selects the smallest (or largest) element from the unsorted portion and swaps it
+            with the leftmost unsorted element, growing the sorted portion. 
+            This process continues until the entire list is sorted. 
+            Selection Sort has an average and worst-case time complexity of O(n^2), making it inefficient for large lists.
+            However, it performs fewer swaps compared to Bubble Sort, 
+            making it more efficient in scenarios where swapping is costly.
+        */
         public string Name => "Selection Sort";
+
         public int SortWithoutVisualizer(int[] array)
         {
+
             int swaps = 0;
             int arrayLength = array.Length;
 
@@ -45,13 +57,13 @@ namespace SortingAlgoritmVisualizer
             {
                 int minIndex = i;
 
+                array[minIndex].Style = new Style(foreground: Color.Maroon);
                 var table = new Table().RoundedBorder();
                 Console.Clear();
 
                 for (int j = i + 1; j < arrayLength; j++)
                 {
                     string message;
-                    Style messageStyle;
 
                     if (array[j].Value < array[minIndex].Value)
                     {
@@ -59,20 +71,20 @@ namespace SortingAlgoritmVisualizer
                     }
 
                     message = $"Comparing    | {array[j]} and {array[minIndex]}";
-                    messageStyle = Style.Parse("yellow");
+                    array[minIndex].Style = new Style(foreground: Color.Green);
 
-                    Program.UpdateConsole(ctx, messageStyle, message, array, table);
+                    Program.UpdateConsole(ctx, new Style(Color.Gold1), message, array, table);
                 }
 
                 if (minIndex != i)
                 {
                     string swapMessage = $"Swapping     | {array[i]} and {array[minIndex]}";
-                    Style swapStyle = Style.Parse("red");
 
+                    array[i].Style = new Style(foreground: Color.Blue);
                     (array[i], array[minIndex]) = (array[minIndex], array[i]);
                     swaps++;
 
-                    Program.UpdateConsole(ctx, swapStyle, swapMessage, array, table);
+                    Program.UpdateConsole(ctx, new Style(foreground: Color.Grey), swapMessage, array, table);
                 }
 
                 Program.UpdateTableAndPrint(array, table);
