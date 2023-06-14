@@ -1,7 +1,7 @@
 # SortingAlgoritmVisualizer
 
 
-### Bubble Sort - done
+## <span style="color: green">Bubble Sort - done </span>
 
 **Algorithm:**
 
@@ -20,7 +20,8 @@
 - O(1) (in-place sorting)
 
 
-### Selection Sort - done
+
+## Selection Sort - done
 
 **Algorithm:**
 
@@ -39,7 +40,8 @@
 - O(1) (in-place sorting)
 
 
-### Insertion Sort
+
+## Insertion Sort
 
 **Algorithm:**
 
@@ -57,7 +59,8 @@
 - O(1) (in-place sorting)
 
 
-### Merge Sort
+
+## Merge Sort
 
 **Algorithm:**
 
@@ -75,7 +78,7 @@
 - O(n) (requires additional space for merging)
 
 
-### Quick Sort
+## Quick Sort
 
 **Algorithm:**
 
@@ -93,7 +96,7 @@
 - O(log n) (recursive stack space)
 
 
-### Heap Sort
+## Heap Sort
 
 **Algorithm:**
 
@@ -111,7 +114,8 @@
 - O(1) (in-place sorting)
 
 
-### Counting Sort
+
+## Counting Sort
 
 **Algorithm:**
 
@@ -133,7 +137,8 @@
 - O(n + k) (requires additional space for the count and output arrays)
  
 
-### Radix Sort
+
+## Radix Sort
 
 **Algorithm:**
 
@@ -152,7 +157,8 @@
 - O(n + k) (requires additional space for the buckets)
 
 
-### Shell Sort
+
+## Shell Sort
 
 **Algorithm:**
 
@@ -170,7 +176,8 @@
 - O(1) (in-place sorting)
 
 
-### Bucket Sort
+
+##Bucket Sort
 
 **Algorithm:**
 
@@ -187,7 +194,8 @@
 - O(n + k) (requires additional space for the buckets)
 
 
-### Comb Sort
+
+## Comb Sort
 
 **Algorithm:**
 
@@ -207,7 +215,8 @@
 - O(1) (in-place sorting)
 
 
-### Cycle Sort
+
+## Cycle Sort
 
 **Algorithm:**
 
@@ -226,7 +235,8 @@
 - O(1) (in-place sorting)
 
 
-### Gnome Sort
+
+## Gnome Sort
 
 **Algorithm:**
 
@@ -245,7 +255,8 @@
 - O(1) (in-place sorting)
 
 
-### Odd-Even Sort
+
+## Odd-Even Sort
 
 **Algorithm:**
 
@@ -262,7 +273,8 @@
 - O(1) (in-place sorting)
 
 
-### Cocktail Shaker Sort
+
+## Cocktail Shaker Sort
 
 **Algorithm:**
 
@@ -282,7 +294,8 @@
 - O(1) (in-place sorting)
 
 
-### Pancake Sort
+
+## Pancake Sort
 
 **Algorithm:**
 
@@ -301,7 +314,8 @@
 - O(1) (in-place sorting)
 
 
-### Bead Sort
+
+## Bead Sort
 
 **Algorithm:**
 
@@ -318,7 +332,8 @@
 - O(k) (requires additional space for the rails, where k is the maximum element in the list)
 
 
-### Shell Merge Sort
+
+##Shell Merge Sort
 
 **Algorithm:**
 
@@ -336,7 +351,8 @@
 - O(n) (requires additional space for merging)
 
 
-### Smooth Sort
+
+## Smooth Sort
 
 **Algorithm:**
 
@@ -355,7 +371,8 @@
 - O(1) (in-place sorting)
 
 
-### Strand Sort
+
+## Strand Sort
 
 **Algorithm:**
 
@@ -373,7 +390,8 @@
 - O(n) (requires additional space for merging)
 
 
-### Tim Sort
+
+## Tim Sort
 
 **Algorithm:**
 
