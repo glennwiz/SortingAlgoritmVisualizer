@@ -1,6 +1,6 @@
 ﻿using Spectre.Console;
 
-namespace SortingAlgoritmVisualizer
+namespace SortingAlgoritmVisualizer.Algorithms
 {
     internal interface ISortAlgorithm
     {

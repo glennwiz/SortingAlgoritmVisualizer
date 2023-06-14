@@ -1,19 +1,10 @@
-﻿using Spectre.Console;
+﻿using SortingAlgoritmVisualizer.Algorithms;
+using Spectre.Console;
 
-namespace SortingAlgoritmVisualizer
+namespace SortingAlgoritmVisualizer.Algoriths
 {
     internal class SelectionSort : ISortAlgorithm
     {
-        /*
-            Selection Sort is another comparison-based sorting algorithm. 
-            It divides the input list into two portions: the sorted portion and the unsorted portion. 
-            The algorithm repeatedly selects the smallest (or largest) element from the unsorted portion and swaps it
-            with the leftmost unsorted element, growing the sorted portion. 
-            This process continues until the entire list is sorted. 
-            Selection Sort has an average and worst-case time complexity of O(n^2), making it inefficient for large lists.
-            However, it performs fewer swaps compared to Bubble Sort, 
-            making it more efficient in scenarios where swapping is costly.
-        */
         public string Name => "Selection Sort";
 
         public int SortWithoutVisualizer(int[] array)

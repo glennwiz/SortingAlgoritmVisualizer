@@ -1,11 +1,12 @@
 ﻿using Newtonsoft.Json;
-using SortingAlgoritmVisualizer;
+using SortingAlgoritmVisualizer.Algorithms;
 using Spectre.Console;
 using System.Data.SqlTypes;
 using System.Diagnostics;
 
 class Program
 {
+    static int run = 0;
     static void Main(string[] args)
     {
         var results = new List<SortingResult>();
@@ -30,7 +31,7 @@ class Program
             });
 
             Console.WriteLine($"{sortingAlgorithm.Name} did {swaps} swaps !!!");
-            int count = 20000;
+            int count = 40000;
             Console.WriteLine($"Running without visualization {count} large random array...");
 
             var array = new int[count];
@@ -69,6 +70,22 @@ class Program
             Console.WriteLine($"Sorting the array without visualizations completed in {elapsedTimeString}.");
             Console.WriteLine($"Number of swaps: {swapsString}");
         }
+
+        AnsiConsole.Write(
+            new FigletText("Results")
+                .Color(Color.Green));
+
+        foreach (var r in results)
+        {
+            //Display the result to screen
+            Console.WriteLine("---------------------");
+            Console.WriteLine($"Algorithm: {r.Algorithm}");
+            Console.WriteLine($"Random Count: {r.RandomCount}");
+            Console.WriteLine($"Swaps: {r.Swaps}");
+            Console.WriteLine($"Elapsed Time: {r.ElapsedTime}");
+            Console.WriteLine();
+            Console.WriteLine("---------------------");
+        }
     }
 
     private static SortableItem[] GetDefaultSortableItems()
@@ -96,7 +113,6 @@ class Program
 
     public static void UpdateConsole(StatusContext spectreContext, Style? style, string message, SortableItem[] array, Table table, string name)
     {
-
         UpdateTableAndPrint(array, table, name);
         spectreContext.SpinnerStyle(style);
         spectreContext.Status(message);
@@ -106,6 +122,7 @@ class Program
     public static void UpdateTableAndPrint(SortableItem[] array, Table table, string Name)
     {
         Console.Clear();
+        Console.SetCursorPosition(0, run * 10);
         AnsiConsole.WriteLine($"{Name}");
         AnsiConsole.WriteLine("");
 

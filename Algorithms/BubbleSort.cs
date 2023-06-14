@@ -1,17 +1,10 @@
-﻿using Spectre.Console;
+﻿using SortingAlgoritmVisualizer.Algorithms;
+using Spectre.Console;
 
-namespace SortingAlgoritmVisualizer
+namespace SortingAlgoritmVisualizer.Algoriths
 {
     internal class BubbleSort : ISortAlgorithm
     {
-        /*
-            Bubble Sort is a simple comparison-based sorting algorithm. 
-            It repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. 
-            The process is repeated until the entire list is sorted. 
-            The algorithm gets its name from the way smaller elements "bubble" to the top of the list in each iteration. 
-            Bubble Sort has an average and worst-case time complexity of O(n^2), making it inefficient for large lists. 
-            However, it is easy to understand and implement
-        */
         public string Name => "Bubble Sort";
 
         public int SortWithoutVisualizer(int[] array)
