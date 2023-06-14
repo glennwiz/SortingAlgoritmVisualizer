@@ -1,7 +1,7 @@
 # SortingAlgoritmVisualizer
 
 
-## Bubble Sort - done
+## <span style="color: green">Bubble Sort - done </span>
 
 **Algorithm:**
 
