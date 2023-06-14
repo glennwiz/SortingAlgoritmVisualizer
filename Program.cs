@@ -94,18 +94,21 @@ class Program
         return sortableArray;
     }
 
-    public static void UpdateConsole(StatusContext spectreContext, Style? style, string message, SortableItem[] array, Table table)
+    public static void UpdateConsole(StatusContext spectreContext, Style? style, string message, SortableItem[] array, Table table, string name)
     {
 
-        UpdateTableAndPrint(array, table);
+        UpdateTableAndPrint(array, table, name);
         spectreContext.SpinnerStyle(style);
         spectreContext.Status(message);
         Thread.Sleep(100);
     }
 
-    public static void UpdateTableAndPrint(SortableItem[] array, Table table)
+    public static void UpdateTableAndPrint(SortableItem[] array, Table table, string Name)
     {
         Console.Clear();
+        AnsiConsole.WriteLine($"{Name}");
+        AnsiConsole.WriteLine("");
+
         // Clear existing columns from the table
         table = new Table();
 

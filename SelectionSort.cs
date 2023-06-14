@@ -73,7 +73,7 @@ namespace SortingAlgoritmVisualizer
                     message = $"Comparing    | {array[j]} and {array[minIndex]}";
                     array[minIndex].Style = new Style(foreground: Color.Green);
 
-                    Program.UpdateConsole(ctx, new Style(Color.Gold1), message, array, table);
+                    Program.UpdateConsole(ctx, new Style(Color.Gold1), message, array, table, Name);
                 }
 
                 if (minIndex != i)
@@ -84,10 +84,10 @@ namespace SortingAlgoritmVisualizer
                     (array[i], array[minIndex]) = (array[minIndex], array[i]);
                     swaps++;
 
-                    Program.UpdateConsole(ctx, new Style(foreground: Color.Grey), swapMessage, array, table);
+                    Program.UpdateConsole(ctx, new Style(foreground: Color.Grey), swapMessage, array, table, Name);
                 }
 
-                Program.UpdateTableAndPrint(array, table);
+                Program.UpdateTableAndPrint(array, table, Name);
             }
 
             return swaps;

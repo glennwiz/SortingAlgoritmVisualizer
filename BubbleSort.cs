@@ -80,13 +80,13 @@ namespace SortingAlgoritmVisualizer
                         array[j].Style = new Style(foreground: Color.Blue);
                     }
 
-                    Program.UpdateConsole(ctx, new Style(foreground: Color.Grey), message, array, table);
+                    Program.UpdateConsole(ctx, new Style(foreground: Color.Grey), message, array, table, Name);
                 }
 
                 if (!swapped)
                     break;
 
-                Program.UpdateTableAndPrint(array, table);
+                Program.UpdateTableAndPrint(array, table, Name);
             }
 
             return swaps;
