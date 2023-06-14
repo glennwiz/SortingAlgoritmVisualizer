@@ -1,7 +1,7 @@
 # SortingAlgoritmVisualizer
 
 
-#### Bubble Sort - done
+## Bubble Sort - done
 
 **Algorithm:**
 
@@ -21,7 +21,7 @@
 
 
 
-#### Selection Sort - done
+## Selection Sort - done
 
 **Algorithm:**
 
