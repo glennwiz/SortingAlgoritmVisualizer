@@ -1,5 +1,23 @@
 # SortingAlgoritmVisualizer
 
+Here are a few common Big O notations and their meanings:
+
+- O(1): Constant time complexity
+- O(log n): Logarithmic time complexity
+- O(n): Linear time complexity
+- O(n log n): Linearithmic time complexity
+- O(n^2): Quadratic time complexity
+- O(2^n): Exponential time complexity
+- O(n^3): Cubic time complexity
+- O(sqrt(n)): Square root time complexity
+- O(n!): Factorial time complexity
+- O(n^k): Polynomial time complexity (k is a constant)
+- O(2^n * n): Exponential time complexity with a polynomial factor
+- O(n^m): Polynomial time complexity with a variable exponent (m is greater than 1)
+- O(n^k * log n): Polynomial time complexity with a logarithmic factor
+- O(n * log^2 n): Linearithmic time complexity with a logarithmic factor squared
+- O(n * 2^n): Exponential time complexity with a linear factor
+
 
 ## <span style="color: green">Bubble Sort - done </span>
 
@@ -405,4 +423,3 @@
 
 **Space Complexity:**
 - O(n) (requires additional space for merging)
-

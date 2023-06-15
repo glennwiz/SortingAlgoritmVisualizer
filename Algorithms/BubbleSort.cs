@@ -61,14 +61,14 @@ namespace SortingAlgoritmVisualizer.Algoriths
                         swapped = true;
                         swaps++;
 
-                        message = $"Swapping     | {array[j + 1]} and {array[j]}";
-                        ;
+                        message = $"Swapping     | {array[j + 1].Value} and {array[j].Value}";
+
                         array[j + 1].Style = new Style(foreground: Color.Green);
 
                     }
                     else
                     {
-                        message = $"Not swapping | {array[j]} and {array[j + 1]}";
+                        message = $"Not swapping | {array[j].Value} and {array[j + 1].Value}";
 
                         array[j].Style = new Style(foreground: Color.Blue);
                     }

@@ -16,8 +16,12 @@ class Program
             .SelectMany(a => a.GetTypes())
             .Where(t => interfaceType.IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract);
 
+        int count = 40000;
+        var threeSixNine = new Random(369);
+
         foreach (var sortingAlgorithmType in sortingAlgorithmTypes)
         {
+
             var sortableItems = GetDefaultSortableItems();
 
             int swaps = 0;
@@ -31,16 +35,18 @@ class Program
             });
 
             Console.WriteLine($"{sortingAlgorithm.Name} did {swaps} swaps !!!");
-            int count = 40000;
+
             Console.WriteLine($"Running without visualization {count} large random array...");
 
             var array = new int[count];
-            var threeSixNine = new Random(369);
+
             var stopwatch = Stopwatch.StartNew();
+
             for (int i = 0; i < array.Length - 1; i++)
             {
                 array[i] = threeSixNine.Next();
             }
+
             swaps = sortingAlgorithm.SortWithoutVisualizer(array);
             stopwatch.Stop();
 
@@ -65,10 +71,11 @@ class Program
             var elapsedTime = stopwatch.Elapsed;
             string elapsedTimeString = $"{elapsedTime.Hours:D2}h:{elapsedTime.Minutes:D2}m:{elapsedTime.Seconds:D2}s:{elapsedTime.Milliseconds:D3}ms";
 
-            string swapsString = swaps >= 1000000 ? swaps.ToString("N0") : swaps.ToString();
+            string swapsString = swaps >= 100000 ? swaps.ToString("N0") : swaps.ToString();
 
             Console.WriteLine($"Sorting the array without visualizations completed in {elapsedTimeString}.");
             Console.WriteLine($"Number of swaps: {swapsString}");
+            run++;
         }
 
         AnsiConsole.Write(
@@ -116,13 +123,13 @@ class Program
         UpdateTableAndPrint(array, table, name);
         spectreContext.SpinnerStyle(style);
         spectreContext.Status(message);
-        Thread.Sleep(100);
+        Thread.Sleep(1000);
     }
 
     public static void UpdateTableAndPrint(SortableItem[] array, Table table, string Name)
     {
         Console.Clear();
-        Console.SetCursorPosition(0, run * 10);
+        Console.SetCursorPosition(0, 0);
         AnsiConsole.WriteLine($"{Name}");
         AnsiConsole.WriteLine("");
 

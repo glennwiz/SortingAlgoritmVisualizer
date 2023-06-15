@@ -61,7 +61,7 @@ namespace SortingAlgoritmVisualizer.Algoriths
                         minIndex = j;
                     }
 
-                    message = $"Comparing    | {array[j]} and {array[minIndex]}";
+                    message = $"Comparing    | {array[j].Value} and {array[minIndex].Value}";
                     array[minIndex].Style = new Style(foreground: Color.Green);
 
                     Program.UpdateConsole(ctx, new Style(Color.Gold1), message, array, table, Name);
@@ -69,7 +69,7 @@ namespace SortingAlgoritmVisualizer.Algoriths
 
                 if (minIndex != i)
                 {
-                    string swapMessage = $"Swapping     | {array[i]} and {array[minIndex]}";
+                    string swapMessage = $"Swapping     | {array[i].Value} and {array[minIndex].Value}";
 
                     array[i].Style = new Style(foreground: Color.Blue);
                     (array[i], array[minIndex]) = (array[minIndex], array[i]);
